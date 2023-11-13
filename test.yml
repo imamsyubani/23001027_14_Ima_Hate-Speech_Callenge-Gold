@@ -1,0 +1,33 @@
+swagger: "2.0"
+info:
+  title: "CSV File Upload API"
+  version: "1.0.0"
+host: "localhost:5000"
+basePath: "/"
+schemes:
+  - "http"
+paths:
+  /csv_upload:
+    post:
+      summary: "Uploads a CSV file and returns the processed data."
+      consumes:
+        - "multipart/form-data"
+      parameters:
+        - in: "formData"
+          name: "csv_file"
+          type: "file"
+          description: "The CSV file to upload."
+      responses:
+        "200":
+          description: "The processed data."
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  type: "object"
+                  properties:
+                    - name: "id"
+                      type: "integer"
+                    - name: "name"
+                      type: "string"

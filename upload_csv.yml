@@ -1,0 +1,16 @@
+tags:
+  - name: upload csv
+get:
+  description: file yang akan diproses
+parameters:
+  - name: file
+    in: formData
+    required: True
+    type: file
+responses:
+    '200':
+      description: Successful response
+    '400':
+      description: Bad Request
+    '500':
+      description: Internal Server Error
